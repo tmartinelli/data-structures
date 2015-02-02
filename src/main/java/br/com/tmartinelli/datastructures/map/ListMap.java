@@ -23,7 +23,7 @@ public class ListMap {
 				}
 			}
 		} else {
-			throw new IllegalArgumentException("Key does not exists");
+			throw new IllegalArgumentException("Key does not exist");
 		}
 	}
 	
@@ -33,7 +33,7 @@ public class ListMap {
 				return association.getCar();
 			}
 		}
-		throw new IllegalArgumentException("Key does not exists");
+		throw new IllegalArgumentException("Key does not exist");
 	}
 	
 	public boolean containKey(String licensePlate) {
