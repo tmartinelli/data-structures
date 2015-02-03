@@ -1,20 +1,20 @@
 package br.com.tmartinelli.datastructures.map;
 
-public class Association {
+public class Association<K, V> {
 
-	private String licensePlate;
-	private Car car;
+	private K key;
+	private V value;
 
-	public Association(String licensePlate, Car car) {
-		this.licensePlate = licensePlate;
-		this.car = car;
+	public Association(K licensePlate, V car) {
+		this.key = licensePlate;
+		this.value = car;
 	}
 
-	public String getLicensePlate() {
-		return licensePlate;
+	public K getKey() {
+		return key;
 	}
 	
-	public Car getCar() {
-		return car;
+	public V getValue() {
+		return value;
 	}
 }

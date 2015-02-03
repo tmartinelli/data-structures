@@ -3,22 +3,22 @@ package br.com.tmartinelli.datastructures.map;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListMap {
+public class ListMap<K, V> {
 
-	private List<Association> associations = new ArrayList<Association>();
+	private List<Association<K, V>> associations = new ArrayList<Association<K, V>>();
 	
-	public void add(String licensePlate, Car car) {
-		if (!containKey(licensePlate)) {
-			Association association = new Association(licensePlate, car);
+	public void put(K key, V value) {
+		if (!containKey(key)) {
+			Association<K, V> association = new Association<K, V>(key, value);
 			associations.add(association);
 		}
 	}
 	
-	public void remove(String licensePlate) {
-		if (containKey(licensePlate)) {
+	public void remove(K key) {
+		if (containKey(key)) {
 			for (int i = 0; i < associations.size(); i++) {
-				Association association = associations.get(i);
-				if (licensePlate.equals(association.getLicensePlate())) {
+				Association<K, V> association = associations.get(i);
+				if (key.equals(association.getKey())) {
 					associations.remove(i);
 				}
 			}
@@ -27,18 +27,18 @@ public class ListMap {
 		}
 	}
 	
-	public Car get(String licensePlate) {
-		for (Association association : associations) {
-			if (licensePlate.equals(association.getLicensePlate())) {
-				return association.getCar();
+	public V get(K key) {
+		for (Association<K, V> association : associations) {
+			if (key.equals(association.getKey())) {
+				return association.getValue();
 			}
 		}
 		throw new IllegalArgumentException("Key does not exist");
 	}
 	
-	public boolean containKey(String licensePlate) {
-		for (Association association : associations) {
-			if (licensePlate.equals(association.getLicensePlate())) {
+	public boolean containKey(K key) {
+		for (Association<K, V> association : associations) {
+			if (key.equals(association.getKey())) {
 				return true;
 			}
 		}

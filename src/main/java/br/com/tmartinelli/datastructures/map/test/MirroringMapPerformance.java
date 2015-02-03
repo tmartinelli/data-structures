@@ -1,12 +1,12 @@
 package br.com.tmartinelli.datastructures.map.test;
 
 import br.com.tmartinelli.datastructures.map.Car;
-import br.com.tmartinelli.datastructures.map.ListMap;
+import br.com.tmartinelli.datastructures.map.Map;
 
-public class ListMapPerformance {
+public class MirroringMapPerformance {
 
 	public static void main(String[] args) {
-		ListMap<String, Car> listMap = new ListMap<String, Car>();
+		Map<String, Car> listMap = new Map<String, Car>();
 
 		int elementNumbers = 15000;
 		
